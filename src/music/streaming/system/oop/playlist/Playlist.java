@@ -13,6 +13,9 @@ public class Playlist<T extends Media> {
     public void add(T item) {
         items.add(item);
     }
+    public void remove(T item) {
+        items.remove(item);
+    }
 
    public void play() {
     if (items.isEmpty()) {
