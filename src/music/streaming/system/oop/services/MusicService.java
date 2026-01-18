@@ -1,6 +1,7 @@
 package music.streaming.system.oop.services;
 import java.util.ArrayList;
 import java.util.List;
+import music.streaming.system.oop.interfaces.Searchable;
 import music.streaming.system.oop.media.Media;
 import music.streaming.system.oop.media.Podcast;
 import music.streaming.system.oop.media.Song;
@@ -13,7 +14,7 @@ import music.streaming.system.oop.media.Song;
  * 
  * @author Fro Wrya M Salih
  */
-public class MusicService {
+public class MusicService implements Searchable{
     /**
      * Stores all media (Songs, Podcasts) in one collection.
      * 
@@ -41,6 +42,7 @@ public class MusicService {
      * WHY: Centralized search functionality - users don't need to know
      * how search works internally (abstraction).
      */
+    @Override
     public List<Media> search(String keyword) {
         List<Media> results = new ArrayList<>();
         for (Media media : mediaCollection) {
